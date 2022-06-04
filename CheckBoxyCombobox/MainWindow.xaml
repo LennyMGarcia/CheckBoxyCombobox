@@ -1,0 +1,38 @@
+﻿<Window x:Class="CheckBoxyCombobox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CheckBoxyCombobox"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <ComboBox Name="Capitales">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="{Binding NombreCapital}" FontSize="16"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="100">
+            <Label FontSize="16" FontWeight="ExtraBlack">Family</Label>
+            <CheckBox Name="TodosC" IsThreeState="True" Checked="TodosC_Checked" Unchecked="TodosC_Unchecked"  >Agregar Todas</CheckBox>
+            <StackPanel Margin="15">
+            <CheckBox Name="Madrid"  Checked="IndividualCheked" Unchecked="IndividualUncheked">Madrid</CheckBox>
+                <CheckBox Name="Bogota" Checked="IndividualCheked" Unchecked="IndividualUncheked">Bogota</CheckBox>
+                <CheckBox Name="Lima" Checked="IndividualCheked" Unchecked="IndividualUncheked">Lima</CheckBox>
+                <CheckBox Name="DF" Checked="IndividualCheked" Unchecked="IndividualUncheked">DF</CheckBox>
+                <CheckBox Name="Santiago" Checked="IndividualCheked" Unchecked="IndividualUncheked">Santiago</CheckBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
